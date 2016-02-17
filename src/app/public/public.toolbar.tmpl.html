@@ -1,0 +1,27 @@
+<div class="md-toolbar-tools" style="opacity=0.2">
+
+    <div id="logo">
+        <img src="../assets/images/tall-logo.png">
+    </div>
+
+    <md-menu class="menu-item padding-right-large">
+        <a href="#/about"> ABOUT </a>
+    </md-menu>
+    <md-menu class="menu-item padding-right-large">
+        <a href="#/team"> TEAM </a>
+    </md-menu>
+
+    <md-menu>
+        <md-button aria-label="Login" ng-click="$mdOpenMenu()" aria-label="side navigation">
+            Login
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item>
+                <md-button href="#/login" aria-label="side navigation">
+                    <md-icon md-font-icon="icon-exit-to-app"></md-icon>
+                    <span translate="ADMIN.TOOLBAR.LOGIN"></span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>
