@@ -2,7 +2,7 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### This is the repo for OpenPrice Web UI App code. ###
+### This is the repo for Openprice Web UI App code. ###
 
 Developer Guide
 ================
@@ -42,7 +42,7 @@ Ask admin to add your account to groundtruthinc team.
 
 Setup [SSH key for Bitbucket](https://confluence.atlassian.com/display/BITBUCKET/How+to+install+a+public+key+on+your+Bitbucket+account)
 
-## Run OpenPrice Web UI Project locally first time ##
+## Run Openprice Web UI Project locally first time ##
 
 ### Checkout code ###
 Check out the code from Bitbucket
@@ -59,7 +59,7 @@ bower install
 ```
 
 ### Run with Browser ###
-You can run OpenPrice Web UI app locally inside browser:
+You can run Openprice Web UI app locally inside browser:
 ```
 gulp serve
 ```
