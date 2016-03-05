@@ -1,5 +1,5 @@
 {
-  "name": "openpriceWeb",
+  "name": "OpenpriceWeb",
   "dependencies": {
     "angular": "1.4.9",
     "angular-animate": "1.4.9",
