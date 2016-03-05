@@ -12,7 +12,7 @@ First you need to install and setup tools needed for local development. Prefer U
 
 ### NodeJS ###
 
-Install [NodeJS 0.12.7](https://nodejs.org/)
+Install [NodeJS 4.2.x LTS](https://nodejs.org/)
 
 ### Javascript Tools ###
 
