@@ -8,7 +8,7 @@ Developer Guide
 ================
 
 ## Local Development Environment Setup ##
-First you need to install and setup tools needed for local development. Prefer Ubuntu or Mac OS X. Avoid Windows.
+First you need to install and setup tools needed for local development.
 
 ### NodeJS ###
 
@@ -16,14 +16,15 @@ Install [NodeJS 4.2.x LTS](https://nodejs.org/)
 
 ### Javascript Tools ###
 
-Install gulp and bower
+Install `ts-node` as global
 ~~~
-npm install -g gulp
-npm install -g bower
+npm install -g ts-node
 ~~~
 
-### ATOM ###
-Install [ATOM Text Editor](https://atom.io/)
+### Editor Tool ###
+Install [ATOM Text Editor](https://atom.io/).
+
+Or [MS Visual Studio Code](https://code.visualstudio.com/).
 
 This is optional. You can choose whatever Text Editor tool for Web development.
 
@@ -33,21 +34,24 @@ Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 Install [Docker](https://docs.docker.com/installation/)
 
-## Bitbucket Account ##
+### Github Account
+Create free account in Github:
+[https://github.com/](https://github.com/)
 
-Create free account in Bitbucket:
-[https://bitbucket.org/](https://bitbucket.org/)
+Ask admin to add your account to groundtruth (opgt).
 
-Ask admin to add your account to groundtruthinc team.
+Setup [SSH key for Github](https://help.github.com/articles/generating-ssh-keys/)
 
-Setup [SSH key for Bitbucket](https://confluence.atlassian.com/display/BITBUCKET/How+to+install+a+public+key+on+your+Bitbucket+account)
+Fork the project from [Open Price Backend Project](https://github.com/opgt/op-backend)
+to your personal account through Web UI at Github.
 
 ## Run Openprice Web UI Project locally first time ##
 
-### Checkout code ###
-Check out the code from Bitbucket
+### Checkout code
+Create a local folder for `~/groundtruth/git`, and check out the code from Github 
+your private repository for **op-web-ui** to this folder.
 ```
-git clone git@bitbucket.org:groundtruthinc/openprice-web-ui.git
+git clone git@github.com:opgt/op-web-ui.git
 ```
 
 ### Install dependencies ###
@@ -55,25 +59,24 @@ git clone git@bitbucket.org:groundtruthinc/openprice-web-ui.git
 First time, you need to install node modules and bower components. Inside openprice-web-ui folder, run
 ```
 npm install
-bower install
 ```
 
 ### Run with Browser ###
 You can run Openprice Web UI app locally inside browser:
 ```
-gulp serve
+npm start
 ```
-It will open a browser window and display the login page. You can login with your account.
+It will open a browser window and display the home page. 
 
 ## On-going Development Process ##
 The master branch is for production release, and for each developer, we are all working on
 release branch, such as release1, release2, etc.
 
 
-So we need to switch to development branch, such as release1:
+So we need to switch to development branch, such as release2:
 
 ```
-git checkout release1
+git checkout release2
 ```
 
 After you have done code changes, you first need to commit it, for example:
