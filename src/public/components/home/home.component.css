@@ -44,7 +44,9 @@
 	flex-wrap: wrap;
 }
 
-
+h3 {
+	font-family: libre-baskerville;
+}
 
 .section1 {
 	display: block;
