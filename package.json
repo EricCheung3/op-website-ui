@@ -1,6 +1,8 @@
 {
     "name": "openprice-web",
     "version": "0.2.0",
+    "author": "Openprice Team",
+    "license": "2015-2016 Copyright Groundtruth Inc.",
     "description": "Openprice Website application",
     "repository": {
         "url": "git@github.com:opgt/op-web-ui.git"
