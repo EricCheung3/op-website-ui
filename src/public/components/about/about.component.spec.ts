@@ -17,7 +17,7 @@ export function main() {
           .then((rootTC) => {
             let aboutDOMEl = rootTC.debugElement.children[0].nativeElement;
 
-            expect(DOM.querySelectorAll(aboutDOMEl, 'h2')[0].textContent).toEqual('Features');
+            expect(DOM.querySelectorAll(aboutDOMEl, 'h2')[0].textContent).toEqual('ABOUT OPENPRICE');
           });
       }));
   });
