@@ -6,4 +6,5 @@ import {Component} from 'angular2/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent {}
+export class AboutComponent {
+}

@@ -1,0 +1,41 @@
+<div class="container">
+    <alert *ngIf="submitted" type="success" dismissible="true">{{alertMessage}}</alert>
+    
+    <h2>Please send us a message if you want to contact.</h2>
+    <form *ngIf="active" (ngSubmit)="onSubmitMessage()" #contactForm="ngForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" 
+                [(ngModel)]="model.name"
+                ngControl="name"  #name="ngForm"
+                placeholder="Your Name..." required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                Name is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" 
+                [(ngModel)]="model.email"
+                ngControl="email"  #email="ngForm"
+                placeholder="Your Email Address..." required>
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                Email is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea type="text" rows="8" class="form-control" 
+                [(ngModel)]="model.message"
+                ngControl="message"  #message="ngForm"
+                placeholder="Your Message..." required></textarea>
+            <div [hidden]="message.valid || message.pristine" class="alert alert-danger">
+                message is required
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary"
+            [disabled]="!contactForm.form.valid">
+            Submit
+        </button>
+    </form>
+</div>
