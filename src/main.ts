@@ -6,8 +6,8 @@ import {AppComponent} from './app/app.component';
 if ('<%= ENV %>' === 'prod') { enableProdMode(); }
 
 bootstrap(AppComponent, [
-  ROUTER_PROVIDERS,
-  provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' })
+    ROUTER_PROVIDERS,
+    provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' })
 ]);
 
 // In order to start the Service Worker located at "./sw.js"
