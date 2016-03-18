@@ -1,5 +1,4 @@
 import {Component} from 'angular2/core';
-import {FORM_DIRECTIVES} from 'angular2/common';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Alert} from 'ng2-bootstrap/components/alert';
 import {Contact} from './contact';
@@ -9,7 +8,7 @@ import {Contact} from './contact';
     moduleId: module.id,
     templateUrl: './contact-form.component.html',
     styleUrls: ['./contact-form.component.css'],
-    directives: [FORM_DIRECTIVES, Alert]
+    directives: [Alert]
 })
 export class ContactFormComponent {
     model = new Contact('', '', '');

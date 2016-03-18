@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 import {NavbarComponent} from './navbar.component';
@@ -13,7 +14,7 @@ import {ContactComponent} from '../public/components/contact/contact.component';
     moduleId: module.id,
     templateUrl: './app.component.html',
     providers: [HTTP_PROVIDERS],
-    directives: [ROUTER_DIRECTIVES, NavbarComponent, FooterComponent]
+    directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES, NavbarComponent, FooterComponent]
 })
 @RouteConfig([
     { path: '/', name: 'Home', component: HomeComponent },
