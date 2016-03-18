@@ -1,53 +1,53 @@
 #team-container {
-	height: 100%;
-	padding-top: 60px;
-	padding-bottom: 60px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	background-color: white;
+    height: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
 }
 
 .team-member {
-	margin-top: 40px;
-	margin-bottom: 40px;
-	margin-left: 60px;
-	margin-right: 60px;
-	text-align: center;
-	width: 460px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: center;
+    width: 460px;
 }
 
 .team-member p {
-	text-align: left;
-	font-size: 16px;
+    text-align: left;
+    font-size: 16px;
 }
 
 #team-banner {
-	height: 100vh;
-	background-color: #1f1f39;
-	text-align: center;
-	font-size: 40px;
-	color: white;
+    height: 100vh;
+    background-color: #1f1f39;
+    text-align: center;
+    font-size: 40px;
+    color: white;
 }
 
 #team-banner  h2 {
-	padding-top: 150px;
-	margin-top: 0px;
-	margin-bottom: 50px;
+    padding-top: 150px;
+    margin-top: 0px;
+    margin-bottom: 50px;
 }
 
 #team-drawing {
-	height: 300px;
+    height: 300px;
 }
 
 .clip-circle {
-	background:url(URL-of-image) no-repeat;
-	background-size:200px 200px;
-	height:200px;
-	width:200px;
-	border-radius:50%;
-	overflow:hidden;
-	margin:auto;
+    background:url(URL-of-image) no-repeat;
+    background-size:200px 200px;
+    height:200px;
+    width:200px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:auto;
 }
 
 .grow { transition: all .2s ease-in-out; }

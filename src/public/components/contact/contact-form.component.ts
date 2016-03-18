@@ -1,10 +1,10 @@
 import {Component} from 'angular2/core';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Alert} from 'ng2-bootstrap/ng2-bootstrap';
-import {Contact}   from './contact';
+import {Contact} from './contact';
 
 @Component({
-    selector: 'contact-form',
+    selector: 'op-contact-form',
     templateUrl: 'public/components/contact/contact-form.component.html',
     styleUrls: ['public/components/contact/contact.component.css'],
     directives: [Alert]

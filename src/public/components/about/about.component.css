@@ -1,24 +1,24 @@
 .section2 {
-	width: 100%;
-	height: 100%;
-	background-color: white;
-	padding-top: 50px;
-	padding-bottom: 70px; 
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 70px; 
 }
 
 .title {
-	width: 60%;
-	font-size: 50px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 3%;
-	text-align: center;
+    width: 60%;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    text-align: center;
 }
 
 .about-descr {
-	width: 750px;
-	font-size: 22px;
-	line-height: 35px;
-	margin-left: auto;
-	margin-right: auto;
+    width: 750px;
+    font-size: 22px;
+    line-height: 35px;
+    margin-left: auto;
+    margin-right: auto;
 }

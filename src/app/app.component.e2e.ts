@@ -1,23 +1,27 @@
 describe('App', () => {
 
-  beforeEach( () => {
-      browser.get('');
-  });
+    beforeEach(() => {
+        browser.get('');
+    });
 
-  it('should have a title', () => {
-      expect(browser.getTitle()).toEqual('My Angular2 App');
-  });
+    it('should have a title', () => {
+        expect(browser.getTitle()).toEqual('Openprice');
+    });
 
-  it('should have <nav>', () => {
-      expect(element(by.css('sd-app sd-navbar nav')).isPresent()).toEqual(true);
-  });
+    it('should have <nav>', () => {
+        expect(element(by.css('op-app op-navbar nav')).isPresent()).toEqual(true);
+    });
 
-  it('should have correct nav text for Home', () => {
-      expect(element(by.css('sd-app sd-navbar nav a:first-child')).getText()).toEqual('HOME');
-  });
+    it('should have correct nav text for Home', () => {
+        expect(element(by.css('op-app op-navbar nav a:first-child')).getText()).toEqual('HOME');
+    });
 
-  it('should have correct nav text for About', () => {
-      expect(element(by.css('sd-app sd-navbar nav a:last-child')).getText()).toEqual('ABOUT');
-  });
+    it('should have correct nav text for Team', () => {
+        expect(element(by.css('op-app op-navbar nav a:child[1]')).getText()).toEqual('Team');
+    });
+
+    it('should have correct nav text for Contact', () => {
+        expect(element(by.css('op-app op-navbar nav a:last-child')).getText()).toEqual('Contact');
+    });
 
 });

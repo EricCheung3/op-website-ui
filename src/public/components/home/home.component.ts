@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 
 @Component({
-  selector: 'sd-home',
+  selector: 'op-home',
   moduleId: module.id,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],

@@ -5,18 +5,20 @@ import {NavbarComponent} from './navbar.component';
 import {FooterComponent} from './footer.component';
 import {HomeComponent} from '../public/components/home/home.component';
 import {TeamComponent} from '../public/components/team/team.component';
+import {AboutComponent} from '../public/components/about/about.component';
 import {ContactComponent} from '../public/components/contact/contact.component';
 
 @Component({
-  selector: 'sd-app',
-  moduleId: module.id,
-  templateUrl: './app.component.html',
-  providers: [HTTP_PROVIDERS],
-  directives: [ROUTER_DIRECTIVES, NavbarComponent, FooterComponent]
+    selector: 'op-app',
+    moduleId: module.id,
+    templateUrl: './app.component.html',
+    providers: [HTTP_PROVIDERS],
+    directives: [ROUTER_DIRECTIVES, NavbarComponent, FooterComponent]
 })
 @RouteConfig([
-  { path: '/',      name: 'Home',  component: HomeComponent  },
-  { path: '/team', name: 'Team', component: TeamComponent },
-  { path: '/contact', name: 'Contact', component: ContactComponent }
+    { path: '/', name: 'Home', component: HomeComponent },
+    { path: '/team', name: 'Team', component: TeamComponent },
+    { path: '/about', name: 'About', component: AboutComponent },
+    { path: '/contact', name: 'Contact', component: ContactComponent }
 ])
-export class AppComponent {}
+export class AppComponent { }
