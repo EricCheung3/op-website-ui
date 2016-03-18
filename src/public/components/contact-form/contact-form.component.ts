@@ -1,13 +1,15 @@
 import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES} from 'angular2/common';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Alert} from 'ng2-bootstrap/ng2-bootstrap';
 import {Contact} from './contact';
 
 @Component({
     selector: 'op-contact-form',
-    templateUrl: 'public/components/contact/contact-form.component.html',
-    styleUrls: ['public/components/contact/contact.component.css'],
-    directives: [Alert]
+    moduleId: module.id,
+    templateUrl: './contact-form.component.html',
+    styleUrls: ['./contact-form.component.css'],
+    directives: [FORM_DIRECTIVES, Alert]
 })
 export class ContactFormComponent {
     model = new Contact('', '', '');
