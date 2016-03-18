@@ -1,7 +1,8 @@
-import {Component} from 'angular2/core';
+import {Component, Inject} from 'angular2/core';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Alert} from 'ng2-bootstrap/components/alert';
 import {Contact} from './contact';
+import {APP_CONFIG, Config}    from '../../../app/app.config';
 
 @Component({
     selector: 'op-contact-form',
@@ -15,21 +16,25 @@ export class ContactFormComponent {
     submitted = false;
     active = true;
     alertMessage = '';
+    postContactUrl: string;
 
-    constructor (private http: Http) {}
+    constructor (
+        @Inject(APP_CONFIG) config:Config,
+        private http: Http) {
+        this.postContactUrl = config.apiHost + '/api/public/contact';
+    }
 
     onSubmitMessage() {
         console.log('submit contact message ' + this.diagnostic);
         this.submitted = false;
 
         // POST to server
-        let url = 'https://dev-api.theopenprice.com/api/public/contact';
         let body = JSON.stringify(this.model);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
         this.http
-            .post(url, body, options)
+            .post(this.postContactUrl, body, options)
             .subscribe(
                 data => {
                     console.log(data);

@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, provide} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
@@ -8,12 +8,16 @@ import {HomeComponent} from '../public/components/home/home.component';
 import {TeamComponent} from '../public/components/team/team.component';
 import {AboutComponent} from '../public/components/about/about.component';
 import {ContactComponent} from '../public/components/contact/contact.component';
+import {APP_CONFIG, CONFIG} from './app.config';
 
 @Component({
     selector: 'op-app',
     moduleId: module.id,
     templateUrl: './app.component.html',
-    providers: [HTTP_PROVIDERS],
+    providers: [
+        HTTP_PROVIDERS,
+        provide(APP_CONFIG, {useValue: CONFIG})
+    ],
     directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES, NavbarComponent, FooterComponent]
 })
 @RouteConfig([

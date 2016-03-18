@@ -1,7 +1,9 @@
 import {join} from 'path';
+import {argv} from 'yargs';
 import {SeedConfig, normalizeDependencies} from './seed.config';
 
 export class ProjectConfig extends SeedConfig {
+    API_HOST = getBackendApiHost();
     PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
 
     constructor() {
@@ -27,3 +29,18 @@ export class ProjectConfig extends SeedConfig {
         this.PROD_DEPENDENCIES = this.PROD_NPM_DEPENDENCIES.concat(this.APP_ASSETS);
     }
 }
+
+function getBackendApiHost() {
+    let backend = argv['backend'] || 'cloud-dev';
+    if (backend === 'local') {
+        return 'http://localhost:7800';
+    } else if (backend === 'local-docker') {
+        return 'http://192.168.99.101:7800';
+    } else if (backend === 'cloud-dev') {
+        return 'https://dev-api.theopenprice.com';
+    } else if (backend === 'cloud-prod') {
+        return 'https://api.theopenprice.com';
+    }
+    return 'https://dev-api.theopenprice.com'; // default to cloud dev env
+}
+
