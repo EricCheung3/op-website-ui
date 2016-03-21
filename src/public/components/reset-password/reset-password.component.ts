@@ -1,31 +1,40 @@
 import {Component, Inject} from 'angular2/core';
 import {Http, Headers, RequestOptions} from 'angular2/http';
+import {RouteParams, Router} from 'angular2/router';
 import {Alert} from 'ng2-bootstrap/components/alert';
-import {Contact} from './contact';
+import {Reset} from './reset';
 import {APP_CONFIG, Config} from '../../../app/app.config';
 
 @Component({
-    selector: 'op-contact-form',
+    selector: 'op-reset-password',
     moduleId: module.id,
-    templateUrl: './contact-form.component.html',
-    styleUrls: ['./contact-form.component.css'],
+    templateUrl: './reset-password.component.html',
+    styleUrls: ['./reset-password.component.css'],
     directives: [Alert]
 })
-export class ContactFormComponent {
-    model = new Contact('', '', '');
+export class ResetPasswordComponent {
+    model = new Reset('', '');
     submitted = false;
     active = true;
     alertMessage = '';
-    postContactUrl: string;
+    putResetUrl: string;
+    apiHost: string;
 
     constructor (
         @Inject(APP_CONFIG) config:Config,
-        private http: Http) {
-        this.postContactUrl = config.apiHost + '/api/public/contact';
+        private _router: Router,
+        private _routeParams:RouteParams,
+        private _http: Http) {
+        this.apiHost = config.apiHost;
     }
 
-    onSubmitMessage() {
-        console.log('submit contact message ' + this.diagnostic);
+    ngOnInit() {
+        let id = this._routeParams.get('requestId');
+        this.putResetUrl = this.apiHost + '/api/public/resetPasswordRequests/' + id;
+        console.log('==>ResetPasswordComponent with id='+id);
+    }
+
+    onSubmit() {
         this.submitted = false;
 
         // POST to server
@@ -33,8 +42,8 @@ export class ContactFormComponent {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        this.http
-            .post(this.postContactUrl, body, options)
+        this._http
+            .post(this.putResetUrl, body, options)
             .subscribe(
                 data => {
                     console.log(data);
@@ -44,10 +53,5 @@ export class ContactFormComponent {
                 error => console.error(error)
             );
 
-        this.model = new Contact('', '', '');
-        this.active = false;
-        setTimeout(()=> this.active=true, 0);
     }
-
-    get diagnostic() { return JSON.stringify(this.model); }
 }

@@ -8,6 +8,7 @@ import {HomeComponent} from '../public/components/home/home.component';
 import {TeamComponent} from '../public/components/team/team.component';
 import {AboutComponent} from '../public/components/about/about.component';
 import {ContactComponent} from '../public/components/contact/contact.component';
+import {ResetPasswordComponent} from '../public/components/reset-password/reset-password.component';
 import {APP_CONFIG, CONFIG} from './app.config';
 
 @Component({
@@ -24,6 +25,7 @@ import {APP_CONFIG, CONFIG} from './app.config';
     { path: '/', name: 'Home', component: HomeComponent },
     { path: '/team', name: 'Team', component: TeamComponent },
     { path: '/about', name: 'About', component: AboutComponent },
-    { path: '/contact', name: 'Contact', component: ContactComponent }
+    { path: '/contact', name: 'Contact', component: ContactComponent },
+    { path: '/reset-password/:requestId', name: 'ResetPassword', component: ResetPasswordComponent }
 ])
 export class AppComponent { }
