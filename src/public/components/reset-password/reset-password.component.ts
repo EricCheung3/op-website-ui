@@ -14,8 +14,12 @@ import {APP_CONFIG, Config} from '../../../app/app.config';
 })
 export class ResetPasswordComponent {
     model = new Reset('', '');
-    putResetUrl: string;
+    resetRequestUrl: string;
     apiHost: string;
+    invalid = false;
+    success = false;
+    email: string;
+    errorMessage: string;
 
     constructor (
         @Inject(APP_CONFIG) config:Config,
@@ -27,25 +31,42 @@ export class ResetPasswordComponent {
 
     ngOnInit() {
         let id = this._routeParams.get('requestId');
-        this.putResetUrl = this.apiHost + '/api/public/resetPasswordRequests/' + id;
+        this.resetRequestUrl = this.apiHost + '/api/public/resetPasswordRequests/' + id;
         console.log('==>ResetPasswordComponent with id='+id);
+
+        // check request valid
+        this._http
+            .get(this.resetRequestUrl, this.getRequestOptions())
+            .subscribe(
+                response => {
+                    console.log('valid reset password request');
+                    this.email = response.json().data.email;
+                },
+                error => {
+                    this.invalid = true;
+                }
+            );
     }
 
     onSubmit() {
         // PUT to server
         let body = JSON.stringify(this.model);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-
         this._http
-            .put(this.putResetUrl, body, options)
+            .put(this.resetRequestUrl, body, this.getRequestOptions())
             .subscribe(
                 data => {
                     console.log('successfully reset password, return data is:', data);
-                    // TODO navigate to login page
+                    this.success = true;
                 },
-                error => console.error(error)
+                error => {
+                    console.error(error);
+                    this.errorMessage = error; // TODO display error messages
+                }
             );
+    }
 
+    private getRequestOptions() : RequestOptions {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        return new RequestOptions({ headers: headers });
     }
 }
