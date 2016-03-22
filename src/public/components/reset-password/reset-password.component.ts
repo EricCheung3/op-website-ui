@@ -14,9 +14,6 @@ import {APP_CONFIG, Config} from '../../../app/app.config';
 })
 export class ResetPasswordComponent {
     model = new Reset('', '');
-    submitted = false;
-    active = true;
-    alertMessage = '';
     putResetUrl: string;
     apiHost: string;
 
@@ -35,20 +32,17 @@ export class ResetPasswordComponent {
     }
 
     onSubmit() {
-        this.submitted = false;
-
-        // POST to server
+        // PUT to server
         let body = JSON.stringify(this.model);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
         this._http
-            .post(this.putResetUrl, body, options)
+            .put(this.putResetUrl, body, options)
             .subscribe(
                 data => {
-                    console.log(data);
-                    this.submitted = true;
-                    this.alertMessage = 'Your message was received, and we will response as soon as possible.';
+                    console.log('successfully reset password, return data is:', data);
+                    // TODO navigate to login page
                 },
                 error => console.error(error)
             );
