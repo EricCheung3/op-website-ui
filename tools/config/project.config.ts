@@ -35,7 +35,7 @@ function getBackendApiHost() {
     if (backend === 'local') {
         return 'http://localhost:7800';
     } else if (backend === 'local-docker') {
-        return 'http://192.168.99.101:7800';
+        return 'http://api.openprice.io';
     } else if (backend === 'cloud-dev') {
         return 'https://dev-api.theopenprice.com';
     } else if (backend === 'cloud-prod') {
