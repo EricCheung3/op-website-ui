@@ -9,5 +9,4 @@ import {ContactFormComponent} from '../contact-form/contact-form.component';
     directives: [ContactFormComponent]
 })
 export class ContactComponent {
-
 }

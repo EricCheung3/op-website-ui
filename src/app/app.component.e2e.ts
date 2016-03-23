@@ -17,11 +17,11 @@ describe('App', () => {
     });
 
     it('should have correct nav text for Team', () => {
-        expect(element(by.css('op-app op-navbar nav a:child[1]')).getText()).toEqual('Team');
+        expect(element(by.css('op-app op-navbar nav a:nth-child(2)')).getText()).toEqual('TEAM');
     });
 
     it('should have correct nav text for Contact', () => {
-        expect(element(by.css('op-app op-navbar nav a:last-child')).getText()).toEqual('Contact');
+        expect(element(by.css('op-app op-navbar nav a:last-child')).getText()).toEqual('CONTACT');
     });
 
 });

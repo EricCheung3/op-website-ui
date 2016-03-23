@@ -7,17 +7,17 @@ import {
 } from 'angular2/testing';
 import {Component} from 'angular2/core';
 import {DOM} from 'angular2/src/platform/dom/dom_adapter';
-import {AboutComponent} from './about.component';
+import {ContactComponent} from './contact.component';
 
 export function main() {
-    describe('About component', () => {
+    describe('Contact component', () => {
         it('should work',
             injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
                 return tcb.createAsync(TestComponent)
                     .then((rootTC) => {
-                        let aboutDOMEl = rootTC.debugElement.children[0].nativeElement;
+                        let contactDOMEl = rootTC.debugElement.children[0].nativeElement;
 
-                        expect(DOM.querySelectorAll(aboutDOMEl, 'h2')[0].textContent).toEqual('ABOUT OPENPRICE');
+                        expect(DOM.querySelectorAll(contactDOMEl, 'h2')[0].textContent).toEqual('Contact Us');
                     });
             }));
     });
@@ -25,7 +25,7 @@ export function main() {
 
 @Component({
     selector: 'test-cmp',
-    directives: [AboutComponent],
-    template: '<op-about></op-about>'
+    directives: [ContactComponent],
+    template: '<op-contact></op-contact>'
 })
 class TestComponent { }
